@@ -1,1 +1,63 @@
 // Your code here
+
+// #grabs element
+let dodger = document.getElementById("dodger");
+
+// changes color
+dodger.style.backgroundColor = "#FF69B4";
+
+function moveDodgerLeft() {
+    let leftNumbers = dodger.style.left.replace("px", "");
+    let left = parseInt(leftNumbers, 10);
+  
+    if (left > 0) {
+      dodger.style.left = `${left - 1}px`;
+    }
+  }
+
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "ArrowLeft") {
+      moveDodgerLeft();
+    }
+  });
+
+  function moveDodgerRight() {
+    let rightNumbers = dodger.style.left.replace("px", "");
+    let right = parseInt(rightNumbers, 10);
+
+    dodger.style.left = `${right + 1}px`;
+    }
+    
+
+    document.addEventListener("keydown", function(e) {
+    if (e.key === "ArrowRight") {
+      moveDodgerRight();
+    }
+  });
+
+
+  function moveDodgerUp() {
+    let upNumbers = dodger.style.bottom.replace("px", "");
+    let up = parseInt(upNumbers, 10);
+
+    dodger.style.bottom = `${up + 1}px`;
+    }
+
+  document.addEventListener ("keydown", function(e) {
+      if (e.key === "ArrowUp") {
+          moveDodgerUp();
+      }
+  });
+
+  function moveDodgerDown() {
+    let upNumbers = dodger.style.bottom.replace("px", "");
+    let down = parseInt(upNumbers, 10);
+
+    dodger.style.bottom = `${down - 1}px`;
+    }
+
+  document.addEventListener ("keydown", function(e) {
+      if (e.key === "ArrowDown") {
+          moveDodgerDown();
+      }
+  });
